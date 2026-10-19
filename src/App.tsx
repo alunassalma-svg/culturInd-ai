@@ -20,8 +20,8 @@ import { ModeratorPage } from '@/pages/ModeratorPage';
 import { Loader2 } from 'lucide-react';
 
 function AppContent() {
-  const { ageGroup, currentPage } = useApp();
-  const { user, loading, restoring } = useAuth();
+  const { ageGroup, currentPage, restoring } = useApp();
+  const { user, loading } = useAuth();
 
   // When the "Why" page is selected, render the homepage and scroll to the section
   useEffect(() => {
@@ -91,7 +91,7 @@ function AppContent() {
       {currentPage === 'takeitirl' && <TakeItIRLPage />}
       {currentPage === 'clubs' && <ClubsPage />}
       {currentPage === 'impact' && <ImpactPage />}
-      {(currentPage === 'why' || currentPage === 'home') && <HomePage />}
+      {currentPage === 'why' && <HomePage />}
       <AIAssistant />
     </Layout>
   );

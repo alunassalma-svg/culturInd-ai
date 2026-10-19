@@ -12,7 +12,7 @@ interface AuthContextValue {
   signOut: () => Promise<void>;
   resetPassword: (email: string) => Promise<{ error: string | null }>;
   // Progress sync
-  saveState: (state: AppState) => Promise<void>;
+  saveState: (state: AppState) => void;
   loadState: (user: User) => Promise<Partial<AppState> | null>;
   hasStoredProgress: (user: User) => Promise<boolean>;
 }
