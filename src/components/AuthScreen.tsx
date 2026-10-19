@@ -18,11 +18,11 @@ export function AuthScreen() {
     setError('');
     setInfo('');
 
-    if (!email.trim() || !password.trim()) {
-      setError('Please enter your email and password.');
+    if (!email.trim()) {
+      setError('Please enter your email.');
       return;
     }
-    if (password.length < 6) {
+    if (mode !== 'reset' && password.length < 6) {
       setError('Password must be at least 6 characters.');
       return;
     }
